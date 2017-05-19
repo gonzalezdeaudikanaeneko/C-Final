@@ -207,11 +207,14 @@ list<Cuenta*>* Banco::LeerFichero() {
 					const char * a = arch.c_str();
 					int l = atoi(a);
 					c->setLiquidacion(l);
+					users->push_front(c);
+					free(c);
+					Cuenta *c;
 				}
 				a++;
 			}while(a<5);
 		}
-		users->push_front(c);
+		//users->push_front(c);
 	}
 	return users;
 }
