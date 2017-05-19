@@ -119,13 +119,20 @@ void crearCuenta(int cuenta, list<Cuenta*>* cu) {
 Cuenta* nuevaCuenta() {
 
 	Cuenta* n = new Cuenta();
-	printf("Introduce titular de la cuenta: \n");
+	printf("Introduce el nombre titular de la cuenta: \n");
 	fflush(stdout);
 	char* titulo;
 	cin >> titulo;
 	cout << endl;
 	n->setNombre(titulo);
-	//////titular//////
+	//////nombre//////
+	printf("Introduce DNI titular de la cuenta: \n");
+	fflush(stdout);
+	int dni;
+	cin >> dni;
+	cout << endl;
+	n->setID(dni);
+	//////dni///////
 	printf("Introduce Numero identificativo de la cuenta: \n");
 	fflush(stdout);
 	int autor;
@@ -139,13 +146,21 @@ Cuenta* nuevaCuenta() {
 	cin >> desc;
 	cout << endl;
 	n->setContrasena(desc);
-	//////contraseña//////
+	//////contraseña///////
 	printf("Introduce la liquidez de la cuenta: \n");
 	fflush(stdout);
 	int l;
-	cin >> desc;
+	cin >> l;
 	cout << endl;
 	n->setLiquidacion(l);
+	///////liquidez////////
+	printf("Introduce la deuda de la cuenta: \n");
+	fflush(stdout);
+	int de;
+	cin >> de;
+	cout << endl;
+	n->setDe(de);
+	///////deudas////////
 	return n;
 }
 
