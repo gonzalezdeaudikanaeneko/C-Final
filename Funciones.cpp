@@ -93,11 +93,11 @@ char mostrarMenuDirector() {
 }
 
 void mostrarCuenta(Cuenta* n) {
-	printf("Titular de la Cuenta: %s\n", n->getNombre());
+	printf("DNI del titular de la Cuenta: %s\n", n->getNumeroId());
 	fflush(stdout);
-	printf("Titular de la Cuenta: %s\n", n->getNombre());
+	printf("Nombre del titular de la Cuenta: %s\n", n->getNombre());
 	fflush(stdout);
-	printf("Numero de la cuenta: %i\n", n->getNumeroId());
+	printf("Numero de la cuenta: %i\n", n->getID());
 	fflush(stdout);
 	printf("Cantidad de saldo: %i\n", n->getLiquidacion());
 	fflush(stdout);
