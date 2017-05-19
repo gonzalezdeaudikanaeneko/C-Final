@@ -54,7 +54,7 @@ char mostrarMenuCliente() {
 			"MENU PRINCIPAL\n"
 			"1.\tIngresar Dinero\n"
 			"2.\tRetirar dinero\n"
-			"4.\tSalir\n\n"
+			"3.\tSalir\n\n"
 			"Introduzca numero de la funcion deseada:\n");
 	fflush(stdout);
 	char resultado;

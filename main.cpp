@@ -47,6 +47,7 @@ int main(void) {
 	Banco b;
 	list<Cuenta*>* CB;
 	CB = b.LeerFichero(); //TODO
+	fflush(stdin);
 	int modificacion, modificacion1;
 	do {
 		repetir = true;
