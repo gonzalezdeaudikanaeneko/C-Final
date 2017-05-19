@@ -208,7 +208,7 @@ list<Cuenta*>* Banco::LeerFichero() {
 					int l = atoi(a);
 					c->setLiquidacion(l);
 					users->push_front(c);
-					free(c);
+					delete *c;
 					Cuenta *c;
 				}
 				a++;
