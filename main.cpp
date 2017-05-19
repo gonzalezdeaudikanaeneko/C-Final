@@ -54,6 +54,8 @@ int main(void) {
 //	CB->push_front(c1);
 //	CB->push_front(c2);
 	//CB = b.LeerFichero(); //TODO
+	CB = b.LeerFichero(); //TODO
+	fflush(stdin);
 	int modificacion, modificacion1;
 	do {//
 		repetir = true;

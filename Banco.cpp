@@ -177,41 +177,44 @@ list<Cuenta*>* Banco::LeerFichero() {
 		aaa = linea.c_str(); //de string a const char*
 		aa = const_cast<char *>(aaa);//Castea de const char* a char*
 		for (i = 0; a!=5; i++) {
+			free(c);
+			Cuenta *c;
 			//si no deja pasar a char* la linea
 			do{
-			do {
-				arch[i] = aa[i];
-				i++;
-			} while (aa[i] != ' ');
+				do {
+					arch[i] = aa[i];
+					i++;
+				} while (aa[i] != ' ');
 
-			if (a == 0) {	//DNI
-				const char * a = arch.c_str();
-				int l = atoi(a);
-				c->setNumeroId(l);
-			}
-			if(a == 1) {	//Nombre
-				char *a = strdup(arch.c_str());//convierte de string a char*
-				c->setNombre(a);
-			}
-			if(a == 2){		//Contrasenya
-				char *a = strdup(arch.c_str());
-				c->setContrasena(a);
-			}
-			if(a == 3)		//Numero de cuenta
-			{
-				const char * a = arch.c_str();
-				int l = atoi(a);
-				c->setID(l);
-			}
-			if(a == 4){		//Liquidez
-				const char * a = arch.c_str();
-				int l = atoi(a);
-				c->setLiquidacion(l);
-			}
-			a++;
+				if (a == 0) {	//DNI
+					const char * a = arch.c_str();
+					int l = atoi(a);
+					c->setNumeroId(l);
+				}
+				if(a == 1) {	//Nombre
+					char *a = strdup(arch.c_str());//convierte de string a char*
+					c->setNombre(a);
+				}
+				if(a == 2){		//Contrasenya
+					char *a = strdup(arch.c_str());
+					c->setContrasena(a);
+				}
+				if(a == 3)		//Numero de cuenta
+				{
+					const char * a = arch.c_str();
+					int l = atoi(a);
+					c->setID(l);
+				}
+				if(a == 4){		//Liquidez
+					const char * a = arch.c_str();
+					int l = atoi(a);
+					c->setLiquidacion(l);
+					users->push_front(c);
+				}
+				a++;
 			}while(a<5);
 		}
-		users->push_front(c);
+		//users->push_front(c);
 	}
 	return users;
 }
