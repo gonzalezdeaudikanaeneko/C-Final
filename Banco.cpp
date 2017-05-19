@@ -177,8 +177,8 @@ list<Cuenta*>* Banco::LeerFichero() {
 		aaa = linea.c_str(); //de string a const char*
 		aa = const_cast<char *>(aaa);//Castea de const char* a char*
 		for (i = 0; a!=5; i++) {
-			free(c);
-			Cuenta *c;
+			//free(c);
+			//Cuenta *c;
 			//si no deja pasar a char* la linea
 			do{
 				do {
@@ -209,12 +209,14 @@ list<Cuenta*>* Banco::LeerFichero() {
 					const char * a = arch.c_str();
 					int l = atoi(a);
 					c->setLiquidacion(l);
-					users->push_front(c);
 				}
 				a++;
+				if(a == 5){
+					c->setDe(0);
+				}
 			}while(a<5);
 		}
-		//users->push_front(c);
+		users->push_front(c);
 	}
 	return users;
 }
