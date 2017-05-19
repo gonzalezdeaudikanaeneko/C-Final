@@ -41,76 +41,76 @@ int main(void) {
 
 
 
-
-	sqlite3 *db;
-	char *zErrMsg = 0;
-	int  rc;
-	char *sql;
-
-	const char* data = "Callback function called";
-
-
-	/* Open database */
-	rc = sqlite3_open("test.db", &db);
-	if( rc ){
-	fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-	return(0);
-	}else{
-	fprintf(stdout, "Opened database successfully\n");
-	}
-	/* Create SQL statement */
-	sql = "CREATE TABLE CUENTA("  \
-	"ID_CUENTA   INT PRIMARY KEY     NOT NULL," \
-	"NOMBRE           VARCHAR(20)    NOT NULL," \
-	"CONTRASENA       VARCHAR(20)   NOT NULL," \
-	"DNI            INT     NOT NULL," \
-	"SUELDO        INT," \
-	"DEUDAS         INT );";
-
-	/* Execute SQL statement */
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	if( rc != SQLITE_OK ){
-	fprintf(stderr, "SQL error: %s\n", zErrMsg);
-	sqlite3_free(zErrMsg);
-	}else{
-	fprintf(stdout, "Table created successfully\n");
-	}
-	sqlite3_close(db);
-
-
-
-
-	/* Open database */
-	rc = sqlite3_open("test.db", &db);
-	if( rc ){
-	  fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-	  return(0);
-	}else{
-	  fprintf(stderr, "Opened database successfully\n");
-	}
-
-	/* Create SQL statement */
-	sql = "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS) "  \
-		 "VALUES (1, 'Paul', 32, 111, 20000, 0); " \
-		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS) "  \
-		 "VALUES (2, 'Allen', 25, 222, 15000, 0); "     \
-		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS)" \
-		 "VALUES (3, 'Teddy', 23, 333, 20000, 500);" \
-		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS)" \
-		 "VALUES (4, 'Mark', 25, 444, 65000, 1000);";
-
-	 sql = "SELECT * from COMPANY";
-
-	/* Execute SQL statement */
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	if( rc != SQLITE_OK ){
-	  fprintf(stderr, "SQL error: %s\n", zErrMsg);
-	  sqlite3_free(zErrMsg);
-	}else{
-	  fprintf(stdout, "Records created successfully\n");
-	}
-	sqlite3_close(db);
-
+//
+//	sqlite3 *db;
+//	char *zErrMsg = 0;
+//	int  rc;
+//	char *sql;
+//
+//	const char* data = "Callback function called";
+//
+//
+//	/* Open database */
+//	rc = sqlite3_open("test.db", &db);
+//	if( rc ){
+//	fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+//	return(0);
+//	}else{
+//	fprintf(stdout, "Opened database successfully\n");
+//	}
+//	/* Create SQL statement */
+//	sql = "CREATE TABLE CUENTA("  \
+//	"ID_CUENTA   INT PRIMARY KEY     NOT NULL," \
+//	"NOMBRE           VARCHAR(20)    NOT NULL," \
+//	"CONTRASENA       VARCHAR(20)   NOT NULL," \
+//	"DNI            INT     NOT NULL," \
+//	"SUELDO        INT," \
+//	"DEUDAS         INT );";
+//
+//	/* Execute SQL statement */
+//	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+//	if( rc != SQLITE_OK ){
+//	fprintf(stderr, "SQL error: %s\n", zErrMsg);
+//	sqlite3_free(zErrMsg);
+//	}else{
+//	fprintf(stdout, "Table created successfully\n");
+//	}
+//	sqlite3_close(db);
+//
+//
+//
+//
+//	/* Open database */
+//	rc = sqlite3_open("test.db", &db);
+//	if( rc ){
+//	  fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+//	  return(0);
+//	}else{
+//	  fprintf(stderr, "Opened database successfully\n");
+//	}
+//
+//	/* Create SQL statement */
+//	sql = "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS) "  \
+//		 "VALUES (1, 'Paul', 32, 111, 20000, 0); " \
+//		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS) "  \
+//		 "VALUES (2, 'Allen', 25, 222, 15000, 0); "     \
+//		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS)" \
+//		 "VALUES (3, 'Teddy', 23, 333, 20000, 500);" \
+//		 "INSERT INTO CUENTA (ID_CUENTA,NOMBRE,CONTRASENA,DNI,SUELDO,DEUDAS)" \
+//		 "VALUES (4, 'Mark', 25, 444, 65000, 1000);";
+//
+//	 sql = "SELECT * from COMPANY";
+//
+//	/* Execute SQL statement */
+//	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+//	if( rc != SQLITE_OK ){
+//	  fprintf(stderr, "SQL error: %s\n", zErrMsg);
+//	  sqlite3_free(zErrMsg);
+//	}else{
+//	  fprintf(stdout, "Records created successfully\n");
+//	}
+//	sqlite3_close(db);
+//
 
 
 
