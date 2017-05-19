@@ -19,7 +19,20 @@ Cuenta::Cuenta(const int nIdent, const char *nombre,
 	this->ID_Cuenta = ID_Cuenta;
 	this->liq = 0;
 	this->contrasena = cont;
+	this->deuda = 0;
 }
+Cuenta::Cuenta(const int nIdent, const char *nombre,
+		int ID_Cuenta, char* cont,int deu) {
+	// TODO Auto-generated constructor stub
+	this->nIdent = nIdent;
+	this->nombre = new char[strlen(nombre) + 1];
+	strcpy(this->nombre, nombre);
+	this->ID_Cuenta = ID_Cuenta;
+	this->liq = 0;
+	this->contrasena = cont;
+	this->deuda=deu;
+}
+
 Cuenta::Cuenta(const Cuenta &c) {
 	// TODO Auto-generated constructor stub
 	this->nIdent = c.nIdent;

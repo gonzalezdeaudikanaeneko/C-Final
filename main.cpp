@@ -46,9 +46,16 @@ int main(void) {
 	Director d;
 	Banco b;
 	list<Cuenta*>* CB;
-	CB = b.LeerFichero(); //TODO
+	Cuenta *c,*c1,*c2;
+	c->setContrasena("123");c->setDe(0);c->setID(1);c->setLiquidacion(222);c->setNombre("Eneko");c->setNumeroId(1);
+//	c1->setContrasena("123");c1->setDe(0);c1->setID(1);c1->setLiquidacion(222);c1->setNombre("Eneko");c1->setNumeroId(01);
+//	c2->setContrasena("123");c2->setDe(0);c2->setID(1);c2->setLiquidacion(222);c2->setNombre("Eneko");c2->setNumeroId(01);
+//	CB->push_front(c);
+//	CB->push_front(c1);
+//	CB->push_front(c2);
+	//CB = b.LeerFichero(); //TODO
 	int modificacion, modificacion1;
-	do {
+	do {//
 		repetir = true;
 		funcMenu = mostrarMenu();
 		switch (funcMenu) {

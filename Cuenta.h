@@ -30,7 +30,8 @@ public:
 	char* getContrasena();
 	int getID();
 	int getDe();
-
+	Cuenta(const int nIdent, const char *nombre,
+			int ID_Cuenta, char* cont,int deu) ;
 	void setNumeroId(int a);	//nIdent
 	void setLiquidacion(int a);
 	void setNombre(char* a);
